@@ -1,16 +1,22 @@
-@'
+
 venv/
 .venv/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+
+# Raw datasets
 data/raw/
-data/processed/
 Datasets/
-*.parquet
 *.json
-models/*.joblib
+
+# Exclude processed datasets by default
+data/processed/*
+!data/processed/vpn_features.parquet
+
+# Allow trained models
+!models/*.joblib
+
 .env
 .DS_Store
 Thumbs.db
-'@ | Set-Content .gitignore
